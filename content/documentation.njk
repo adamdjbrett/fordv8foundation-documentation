@@ -1,0 +1,12 @@
+---
+title: FV8F Docs
+description: Documentation menu - follow the documentation instructions in order.
+---
+<div class="row mt-3 mb-3">
+<div class="col-md-8 mx-auto p-3 p-md-5 text-center">
+<h1>{{title}}</h1>
+<h2 class="lead mb-3">{{description}}</h2>
+</div>
+</div>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
