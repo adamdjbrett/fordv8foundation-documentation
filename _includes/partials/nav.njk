@@ -1,0 +1,25 @@
+<nav class="navbar bg-primary rounded-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand text-white" href="/">{{metadata.nav.title}}</a>
+<button class="navbar-toggler bg-white opacity-75" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="offcanvas offcanvas-end rounded-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+<div class="offcanvas-header bg-primary text-white">
+<h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{metadata.nav.title}}</h5>
+<button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body"><p class="col-md-12 p-1"><strong>Menu</strong></p>
+<div class="row mb-3 p-3">{% for s in metadata.nav.list %}
+<div class=" col-6">
+<a href="{{s.url}}" class="btn btn-outline-primary col-12">{{s.nav}}
+</a>
+</div>{% endfor %}
+</div>
+<hr/>
+<ul class="navbar-nav justify-content-end p-3">{% for v in collections.posts | reverse %}
+<li class="nav-item"><a class="nav-link" href="{{v.url}}">{{v.data.title}}</a></li>{% endfor %}</ul>
+</div>
+</div>
+</div>
+</nav>
